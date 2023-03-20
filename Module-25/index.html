@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Related Explore</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>I am Abdullah Al Noman</h1>
+        
+    </header>
+    <main id="main-container">
+        <section id="dom">
+            <h1>Explore Dom</h1>
+        <ul id="dom-list">
+            <li>Data Object Model</li>
+            <li>getElementByTag</li>
+            <li>getElementById</li>
+            <li>getElementByClass</li>
+        </ul>
+        </section>
+        <section id="fruits_container">
+            <h1>Fruits I Like</h1>
+            <ul>
+                <li>Banana</li>
+                <li>Apple</li>
+                <li>Orange</li>
+                <li>Mango</li>
+            </ul>
+        </section>
+        <section class="places" id="placesId">
+            <h1 id="places-tittle" class="noman tanjid rahat miraj">Places I Like To visit</h1>
+            <ul class="places-list" id="places-list">
+                <li class="top-place">Sajek</li>
+                <li class="top-place">Bandarban</li>
+                <li class="top-place">SundarBAn</li>
+                <li>Kuakata</li>
+            </ul>
+        </section>
+        
+    </main>
+    <footer>
+
+    </footer>
+    <!-- js scripts  -->
+    <script src="js/dom.js"></script>
+   
+    <script src="js/appended.js"></script>
+    <script src="js/styleInJs.js"></script>
+    <script>
+    // option:1 - getElementsByTagName use 
+        const allHeading = document.getElementsByTagName('h1');
+        for(const h1 of allHeading)
+        {
+            //console.log(h1.innerText);
+        }
+       
+        const allLi = document.getElementsByTagName('li');
+        for(const li of allLi)
+        {
+            //console.log(li.innerText);
+        }
+    // option : 2 - getElementById use 
+
+        const allDoms = document.getElementById('dom');
+       console.log(allDoms.innerText);
+    //    option : 3 - getElementsByClassName Use 
+
+       const allFruits = document.getElementsByClassName('fruits');
+       for(let fruit of allFruits)
+       {
+        console.log(fruit.innerText);
+       }
+       const topPlace= document.getElementsByClassName('top-place');
+       for(let place of topPlace)
+       {
+        console.log(place.innerText);
+       }
+       
+    //    option :4 - querySelectorAll use 
+       const someLi = document.querySelectorAll('#dom li');
+       for(let li of someLi)
+       {
+        console.log(li.innerText);
+       }
+
+    // option:5 - querySelector use
+
+       let oneLi = document.querySelector(".places li");
+       console.log(oneLi.innerText);
+    // option:6 - style in dom 
+
+        document.getElementById('dom').style.backgroundColor='white';
+        const check=  document.getElementById('dom').style;
+        console.log(check);
+    // option:7 - getAttribute use 
+
+      const tittle=  document.getElementById('places-tittle');
+       const checkAttribute = tittle.getAttribute('class');
+       const checkAttribute1 = tittle.getAttribute('id');
+       console.log(checkAttribute);
+       console.log(checkAttribute1);
+    // option:8 - class list add remove check 
+
+       console.log(tittle.classList);
+       tittle.classList.remove('tanjid');
+       console.log(tittle.classList);
+       tittle.classList.add('samid');
+       console.log(tittle.classList);
+    //option :9 - set Attribute use
+
+       tittle.setAttribute('tittle','tooltip by set attribute in js')
+       console.log(tittle.classList);
+    // option : 10 - innerHtml use
+       const innerCheck =document.getElementsByClassName('places')[0].innerHTML;
+       console.log(innerCheck);
+       const innerApply = document.getElementById('places-tittle').innerHTML='<h2> I Am Noman </h2>';
+       console.log(innerApply);
+    // option: 11 - nodeList , createElement
+       const li = document.createElement('li');
+       li.innerText ="cox's bazar";
+        const placesId = document.getElementById('placesId')      
+       const li2 = document.createElement('li');
+       li2.innerText = "MohaStanGhor"
+       const allList = document.getElementById('places-list');
+      const finalOutput=  allList.append(li2);
+       console.log(finalOutput)
+       placesId.classList.add('bg-for-fruitsContainer');
+       placesId.classList.add('text-middle');
+    </script>
+</body>
+</html>

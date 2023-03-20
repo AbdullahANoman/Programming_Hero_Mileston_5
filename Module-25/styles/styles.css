@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+
+h1{
+    color: pink;
+}
+li{
+    color: lightcoral;
+}
+.top-place{
+    font-size: 30px;
+    font-weight: bold;
+}
+.text-middle{
+    text-align: center;
+}
+.bg-for-fruitsContainer{
+    background-color: yellowgreen !important;
+    border-radius: 15px !important;
+    color: white !important;
+}

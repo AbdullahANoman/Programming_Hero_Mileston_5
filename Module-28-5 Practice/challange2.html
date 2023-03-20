@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challange-2</title>
+</head>
+<body>
+    <!-- একটা ডিসকাউন্ট ক্যালকুলেটর এর প্রাকটিস দিয়েছি। সেটা করো। যেখানে একটা প্রাইস লেখা থাকবে এবং একটা বাটন আছে। সেটাতে ক্লিক করলে প্রাইস ৩০% কমে যাবে। এইটার আরেকটু এডভান্সড ভার্সন হবে। তুমি যে Apply বাটনে ক্লিক করবে তখন যদি পাশের টেক্সট বক্স এ DISC30 লেখা থাকে তাহলে ডিসকাউন্ট কাজ করবে। প্রাইস ৩০% কমবে। আর যদি DISC30 না লিখে অন্য কিছু লিখে। যেমন ধরো DOM30 বা DISCOUNT30 বা অন্য কিছু। তাহলে ডিসকাউন্ট কাজ হবে না।  -->
+
+    <h1>Price : <span id="price">1000</span></h1>
+    Coupon : <input type="text" name="" id="coupon-field"> 
+    <button id="btn-apply">Apply</button>
+    <h1>Please Pay : <span id="pay">00</span> </h1>
+
+
+    <script>
+        document.getElementById('btn-apply').addEventListener('click',function(){
+            const inputValue = document.getElementById('coupon-field').value;
+            const priceValue = parseFloat(document.getElementById('price').innerText);
+            const payValue = parseFloat(document.getElementById('pay').innerText);
+            document.getElementById('coupon-field').value  = ''
+            console.log(inputValue)
+            handle(priceValue,inputValue,payValue);
+            
+        })
+        function handle(price,value,pay){
+            if(value =='DISC30'){
+                document.getElementById('pay').innerText = price - price*0.3;
+            }
+            else{
+                document.getElementById('pay').innerText = price;
+                alert('please input the coupon code correctly')
+            }
+        }
+    </script>
+</body>
+</html>
